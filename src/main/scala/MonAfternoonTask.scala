@@ -5,8 +5,7 @@ object MonAfternoonTask extends App  {
   private def d: Boolean = "Rabbit" < "Hamster"
   private def e: Boolean = 17 % 2 == 1
   private def f: Boolean = (75 / 9) < 30 && (89 / 6) < 20
-
-
+// does not need to use "("
 
   println(f"a: $a")
   println(f"b: $b")
@@ -14,8 +13,6 @@ object MonAfternoonTask extends App  {
   println(f"d: $d")
   println(f"e: $e")
   println(f"f: $f")
-
-
 
   // 2. What is the difference between the `String` “I love scala already” and the print line “println (“I love scala already”)”?
   // one is a variable and the other is command that prints the value of that variable to stdout (the terminal)
@@ -46,6 +43,9 @@ object MonAfternoonTask extends App  {
   // Can you include any class methods in the body? Can you consider type sensitivity in your class parameter(s) type(s)
   // (and what needs to be made here if you do…)?
 
+  //Type sensitivity: it is more to do with the type
+  // make types their own classes if you use it a lot (multiple types, re-use, or can do for everything) - write cleaner code
+  // class are instance methods to make objects
   class Book (val name:String, val author:String, val available:Boolean = true) {
     private var _timesRead: Int = 0
     var language:String = "English"
@@ -88,9 +88,9 @@ object MonAfternoonTask extends App  {
   println(e6)
   println(e7)
 
-  // Research 1:
+  // Research 1 and 2:
   //  val new: String = "Bruna"
-  // There are some protected keywords that cannot be used as a variable name (e.g. new, val, private)
+  // There are some protected keywords that cannot be used as a variable name (e.g. new, val, private) - to use it use a back tick
 
   // REsearch 3
   // https://docs.scala-lang.org/tour/case-classes.html
