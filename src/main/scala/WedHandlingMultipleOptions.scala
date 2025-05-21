@@ -62,17 +62,14 @@ object WedHandlingMultipleOptions extends App {
   // EXERCISE:
 // Shortcut:  cmd + f highlight, cmd+r replace
   //SCALA EXERCISE
-  val ratingAge = 8
-  ratingAge match {
-    case age if age >= 18 => "18"
-    case age if age >= 15 => "15"
-    case age if age >= 12 => "12A"
-    case age if age >= 8 => "PG"
-    case age if age >= 4 => "U"
-    case age if age >= 0 => "Invalid age"
-    case _ => "Invalid age"
-
-    println("Rating: $ratingAge")
+  val givenAge: Int = 3
+  givenAge match {
+    case age if age >= 18 => println("Films ratings: U, PG, 12A, 15 or 18")
+    case age if age >= 15 => println("Films ratings: U, PG, 12A or 15")
+    case age if age >= 12 => println("Films ratings: U, PG or 12A")
+    case age if age >= 8 => println("Films ratings: U or PG")
+    case age if age >= 4 => println("Films ratings: U only")
+    case age if age >= 0 => println(s"$age is too young to attend the cinema")
   }
 
   // ---------------------------------------------------
