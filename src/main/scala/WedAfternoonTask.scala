@@ -54,7 +54,7 @@ object WedAfternoonTask extends App {
 //  1. What is this order, where can we find it?
   // It helps to identify which operator to evaluate first (e.g. in maths we do multiplication first)
   // In logic we do:
-  // FIRST: < > == !=
+  // FIRST: () < > == !=
   // SECOND: &&
   // THIRD: ||
 
@@ -98,4 +98,9 @@ object WedAfternoonTask extends App {
   } else {
     println("no")
   }
+
+  // OR
+
+  val fv2 = if (x > y) "yes" else "no"
+  println(fv2)
 }
