@@ -23,10 +23,9 @@ object LocatorsAfternoonTask extends App {
 
   // 3. Find by Class Name: Locate the text area using class name locator and enter text line "This is a test comment"
   val textArea: WebElement = driver.findElement(By.name("my-textarea"))
-//  val textArea: WebElement = driver.findElement(By.className("form-control"))
   textArea.sendKeys("This is a test comment")
   println("Task 3. This is a test comment")
-  // or "driver.findElement(By.className("form-control"))" less precise
+  // I tried the className method, but it didn't work because there are more classes with the same name
 
   // 4. Find by Tag Name: Locate all <input> elements and print how many are present on the page
   val inputs = driver.findElements(By.tagName("input"))
@@ -43,7 +42,7 @@ object LocatorsAfternoonTask extends App {
   partialLink.click()
   println("Task 6. Clicked link using partial link text 'Return'")
 
-//  driver.quit()
+  driver.quit()
 
 }
 
