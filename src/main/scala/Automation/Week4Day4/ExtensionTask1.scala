@@ -3,45 +3,33 @@ package Automation.Week4Day4
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.{By, WebDriver, WebElement}
 
-object LocatorsAfternoonTask extends App {
+object ExtensionTask1 extends App {
 
-  // Instantiating the ChromeDriver for interacting with the Chrome browser
   val driver: WebDriver = new ChromeDriver()
+  driver.get("https://www.w3schools.com/html/html_examples.asp")
 
-  // Accessing the web url for testing
-  // 1. Find by ID:
-  driver.get("https://www.selenium.dev/selenium/web/web-form.html")
-  val textInput: WebElement = driver.findElement(By.id("my-text-id"))
-  textInput.sendKeys("Alice")
-  println("Task 1. Text Input: Alice")
+  // a) Identify Button Elements
+  val buttons = driver.findElements(By.tagName("button"))
+  println(s"1a. Number of button elements: ${buttons.size()}")
 
-  // 2. Find by Name:
-  val password: WebElement = driver.findElement(By.name("my-password"))
-  password.sendKeys("12345")
-  println("Task 2. Password: 12345")
+  // b) Identify Image Elements
+  val images = driver.findElements(By.tagName("img"))
+  println(s"1b. Number of image elements: ${images.size()}")
 
-  // 3. Find by Class Name:
-  val textArea: WebElement = driver.findElement(By.name("my-textarea"))
-  textArea.sendKeys("This is a test comment")
-  println("Task 3. This is a test comment")
-  // or "driver.findElement(By.className("form-control"))" less precise
+  // c) Count how many of a specific element (e.g., <h1> or <a>) exist on the page
+  val h1Count = driver.findElements(By.tagName("h1")).size()
+  println(s"1c. Number of <h1> elements: $h1Count")
 
-  // 4. Find by Tag Name:
-  val inputs = driver.findElements(By.tagName("input"))
-  println(s"Task 4. Number of <input> elements: ${inputs.size()}")
+  // d) Use a loop to identify multiple types of tags (like p, a, h1, button
+  val tagsToCheck = List("a", "h1", "button")
+  tagsToCheck.foreach { tag =>
+    val elements = driver.findElements(By.tagName(tag))
+    println(s"1d. Number of <$tag> elements: ${elements.size()}")
+  }
 
-  // 5. By LinkText
-  val link: WebElement = driver.findElement(By.linkText("Return to index"))
-  link.click()
-  println("Task 5. Clicked 'Return to index' ")
-
-  // 6. By PartialLinkText
-  driver.navigate().back()
-  val partialLink = driver.findElement(By.partialLinkText("Return"))
-  partialLink.click()
-  println("Task 6. Clicked link using partial link text 'Return'")
+  // e) Use a loop to find the count of hyperlinks on a page?
+  val links = driver.findElements(By.tagName("a"))
+  println(s"1e. Total hyperlinks on page: ${links.size()}")
 
   driver.quit()
-
 }
-
