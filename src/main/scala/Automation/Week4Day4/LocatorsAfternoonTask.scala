@@ -23,6 +23,7 @@ object LocatorsAfternoonTask extends App {
 
   // 3. Find by Class Name: Locate the text area using class name locator and enter text line "This is a test comment"
   val textArea: WebElement = driver.findElement(By.name("my-textarea"))
+//  val textArea: WebElement = driver.findElement(By.className("form-control"))
   textArea.sendKeys("This is a test comment")
   println("Task 3. This is a test comment")
   // or "driver.findElement(By.className("form-control"))" less precise
@@ -42,7 +43,7 @@ object LocatorsAfternoonTask extends App {
   partialLink.click()
   println("Task 6. Clicked link using partial link text 'Return'")
 
-  driver.quit()
+//  driver.quit()
 
 }
 
