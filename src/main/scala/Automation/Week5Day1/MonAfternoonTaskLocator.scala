@@ -41,26 +41,43 @@ object MonAfternoonTaskLocator extends App {
   //<input type="submit" name="submitbutton" value="submit" class="styled-click-button">
 
   //    A link on the page
-  val link: WebElement = driver.findElement(By.className("styled-click-button"))
+  val link: WebElement = driver.findElement(By.linkText("EvilTester.com"))
   link.click()
-  println("Task 3b. Clicked a Link")
+  println("Task 3c. Clicked a link")
+  // <a target="_blank" rel="noopener noreferrer" href="https: //eviltester.com">EvilTester.com</a>
 
+  //  4. Use a different locator strategy for EACH action:
+  //    One action must use `id`
+  //     By.id("...")
+  //     The only ID I found was: "HTMLFormElements")
 
+  //    One must use `name`
+  //    By.name("username")
 
-//  driver.quit()
+  //    One must use `className`
+  //    By.className("styled-click-button")
+
+  //    One must use `tagName`
+  //    By.tagName("form")
+  val formTags = driver.findElements(By.tagName("form"))
+  println(s"Task 4. Tag Name: Number of <form> elements: ${formTags.size()}")
+
+  //    One must use `cssSelector`
+  //    By.cssSelector(""input[name='password']")
+
+  //    One must use `xpath`
+  //    By.xpath("//input[@value='cb1']")
+
+  //    One must use `linkText`
+  //    By.linkText("EvilTester.com")
+
+  // TBC this one:
+  //    One must use `partialLinkText`
+  //    By.partialLinkText("Evil")
+//  driver.navigate().back()
+//  val partialLink = driver.findElement(By.partialLinkText("Evil"))
+//  partialLink.click()
+//  println("Task 4. Clicked link using partial link text 'Evil'")
+
+  driver.quit()
 }
-
-
-//  3. Clicks on:
-//    A checkbox
-//    A submit button
-//    A link on the page
-//  4. Use a different locator strategy for EACH action:
-//    One action must use `id`
-//    One must use `name`
-//    One must use `className`
-//    One must use `tagName`
-//    One must use `cssSelector`
-//    One must use `xpath`
-//    One must use `linkText`
-//    One must use `partialLinkText`
