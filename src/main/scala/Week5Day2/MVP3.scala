@@ -9,7 +9,8 @@ object MVP3 extends App {
   val driver: WebDriver = new ChromeDriver()
 
   // Accessing the web url for testing
-  driver.get("https://www.selenium.dev/selenium/web/web-form.html")
+  driver.get("https://demoqa.com/automation-practice-form")
+
 
 //  driver.quit()
 }

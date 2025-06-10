@@ -5,11 +5,27 @@ import org.openqa.selenium.chrome.ChromeDriver
 
 object MVP2 extends App {
 
-  // Instantiating the ChromeDriver for interacting with the Chrome browser
   val driver: WebDriver = new ChromeDriver()
 
-  // Accessing the web url for testing
-  driver.get("https://www.selenium.dev/selenium/web/web-form.html")
+  driver.get("https://demoqa.com/automation-practice-form")
 
-//  driver.quit()
+  driver.navigate().to("https://example.com")
+
+  driver.navigate().back()
+
+  driver.navigate().forward()
+
+  driver.navigate().refresh()
+
+  driver.manage().window().maximize()
+
+  driver.manage().window().minimize()
+
+  val pageSource = driver.getPageSource
+//  println(s"Full HTML source: $pageSource")
+  println(s"First 200 characters:\n" + pageSource.take(200))
+
+  driver.close()
+
+  driver.quit()
 }

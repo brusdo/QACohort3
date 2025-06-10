@@ -23,5 +23,5 @@ object BrowserMethods extends App {
 
   driver.close()
 
-//  driver.quit()
+  driver.quit()
 }
