@@ -13,14 +13,11 @@ object MVP3 extends App {
 
   // 3. Locate elements:
   val firstName = driver.findElement(By.id("firstName"))
-  // <input required="" autocomplete="off" placeholder="First Name" type="text" id="firstName" class="mr-sm-2 form-control">
 
   val submitBtn = driver.findElement(By.id("submit"))
-  // <button id="submit" type="submit" class="btn btn-primary">Submit</button>
 
 //  val readingCheckbox = driver.findElement(By.id("hobbies-checkbox-2"))
   val readingCheckbox = driver.findElement(By.xpath("//label[@for='hobbies-checkbox-2']"))
-  // <input type="checkbox" id="hobbies-checkbox-2" class="custom-control-input" value="2">
 
   if(firstName.isDisplayed && firstName.isEnabled) {
     firstName.sendKeys("Bruna")
