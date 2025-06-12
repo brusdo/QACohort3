@@ -1,6 +1,5 @@
 package Week5Day3
 
-import org.openqa.selenium.By.ById
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.By
 
