@@ -76,25 +76,25 @@ object ExtensionHandleAlertsAndFrames extends App {
   indexLink.click()
   println("7. All done. Returned to Home Page")
 
-  // ---- 8. Handle Alerts ----
-  driver.get("https://www.tutorialspoint.com/selenium/practice/alerts.php")
-
-  // Simple Alert
-  driver.findElement(By.id("simpleAlert")).click()
-  driver.switchTo().alert().accept()
-  println("8. Simple alert accepted")
-
-  // Confirm Alert
-  driver.findElement(By.id("confirmAlert")).click()
-  driver.switchTo().alert().dismiss()
-  println("8. Confirmation alert dismissed")
-
-  // Prompt Alert
-  driver.findElement(By.id("promptAlert")).click()
-  val promptAlert = driver.switchTo().alert()
-  promptAlert.sendKeys("My text")
-  promptAlert.accept()
-  println("8. Prompt alert - text added and accepted")
+//  // ---- 8. Handle Alerts ----
+//  driver.get("https://www.tutorialspoint.com/selenium/practice/alerts.php")
+//
+//  // Simple Alert
+//  driver.findElement(By.id("simpleAlert")).click()
+//  driver.switchTo().alert().accept()
+//  println("8. Simple alert accepted")
+//
+//  // Confirm Alert
+//  driver.findElement(By.id("confirmAlert")).click()
+//  driver.switchTo().alert().dismiss()
+//  println("8. Confirmation alert dismissed")
+//
+//  // Prompt Alert
+//  driver.findElement(By.id("promptAlert")).click()
+//  val promptAlert = driver.switchTo().alert()
+//  promptAlert.sendKeys("My text")
+//  promptAlert.accept()
+//  println("8. Prompt alert - text added and accepted")
 
 //  driver.quit()
 }
