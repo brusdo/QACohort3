@@ -2,7 +2,7 @@ package Week5Day4
 
 // Import necessary Selenium classes
 import org.openqa.selenium.chrome.ChromeDriver
-import org.openqa.selenium.{By, WebDriver}
+import org.openqa.selenium.{By, WebDriver, WebElement}
 
 // Define a singleton object with main method
 object HandlingStaticTable extends App {
@@ -20,12 +20,13 @@ object HandlingStaticTable extends App {
   val rows = driver.findElements(By.xpath("//table[@id='customers']/tbody/tr[position() > 1]"))
 
   //    Iterate through each row
+//  for (i <- 0 until rows.size()) {
   for (i <- 0 until rows.size()) {
     // Get all columns (td elements) inside the current row
     val cols = rows.get(i).findElements(By.tagName("td"))
 
     // Convert column elements to text and join with " | " separator
-    val rowText = cols.toArray.map(_.asInstanceOf[org.openqa.selenium.WebElement].getText).mkString(" | ")
+    val rowText = cols.toArray.map(_.asInstanceOf[WebElement].getText).mkString(" | ")
 
     // Print the formatted row data
     println(s"Row ${i + 1}: $rowText")
