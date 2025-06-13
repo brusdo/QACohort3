@@ -36,12 +36,12 @@ object MVP1 extends App {
   println("I can see Brazil 🇧🇷")
 
   // 4b Once visible, extract its capital and currency
-  val row_tds = brazil_tr.findElements(By.tagName("td"))
-  val capital = row_tds.get(1).getText
-  val currency = row_tds.get(2).getText
+  val tdsRow = brazil_tr.findElements(By.tagName("td"))
+  val capital = tdsRow.get(1).getText
+  val currency = tdsRow.get(2).getText
   println(s"Brazil's capital is: $capital")
   println(s"Brazil's currency is: $currency")
 
-  //  driver.quit()
+    driver.quit()
 
 }
